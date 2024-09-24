@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>2번 문제</title>
+    <style>
+        .container {
+            display: flex;
+        }
+        .left, .right {
+            width: 50%;
+            height: 100vh;
+            overflow: auto;
+        }
+        .left {
+            border-right: 1px solid #ccc;
+        }
+
+        /* 왼쪽 페이지의 스타일 */
+        input, textarea, button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        input, textarea, button, select {
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -o-border-radius: 0;
+            border-radius: 0;
+        }
+
+        .btn1 {
+            width: 10%; /* 너비를 9%로 조정 */
+            height: 30px;
+            border: 2px solid #333333;
+            border-radius: 5px;
+            font-size: 0.8em; /* 폰트 크기 증가 */
+            font-weight: bold;
+            color: whitesmoke;
+            text-shadow: 2px 2px black;
+            text-align: center;
+            background-color: rgb(46, 70, 110);
+            background-origin: border-box;
+            margin: 0%; /* 버튼 사이의 간격 추가 */
+            box-sizing: border-box; /* 박스 사이징 설정 */
+        }
+
+        .btn2 {
+            width: 90%;
+            height: 40px;
+            border: 5px solid #333333;
+            border-radius: 10px;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: aliceblue;
+            text-shadow: 3px 3px black;
+            text-align: center;
+            background-color: rgb(51, 46, 46);
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        /* 오른쪽 페이지의 스타일 */
+        .btn-check {
+            height: 50px;
+            box-shadow: 0px 1px 0px 0px #fff6af;
+            background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+            background-color: #ffec64;
+            -webkit-border-radius: 0;
+            border: 1px solid #ffaa22;
+            display: inline-block;
+            cursor: pointer;
+            color: #333333;
+            font-family: Arial;
+            font-size: 1.6em;
+            font-weight: bold;
+            padding: 6px 24px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #ffee66;
+        }
+    </style>
+
+    <!-- 왼쪽 페이지의 스크립트 -->
+    <script type="text/javascript">
+        function btnColor() {
+            var style = getComputedStyle(this, null);
+            if (style.backgroundColor == "rgb(46, 70, 110)") {
+                this.style.backgroundColor = "yellow";
+            } else {
+                this.style.backgroundColor = "rgb(46, 70, 110)";
+            }
+        }
+
+        function btnClear() {
+            // 전체 버튼의 색상 초기화
+            for (let i = 1; i <= 100; i++) {
+                document.getElementById("btn" + i).style.backgroundColor = "rgb(46, 70, 110)";
+            }
+        }
+    </script>
+
+    <!-- 오른쪽 페이지의 스크립트 -->
+    <script type="text/javascript">
+        function beep() {
+            var snd = new Audio("data:audio/wav;base64,//uQRAAAAWMSLwUIY...");
+            snd.play();
+        }
+
+        function checkval() {
+            var val = "구조대원도한문제풀어야해";
+            if (val == (document.getElementById("출력1").value)) {
+                // 전체 페이지 이동
+                window.location.href = 'image2.html';
+            } else {
+                document.getElementById("error").style.display = "block";
+                beep();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- 왼쪽 콘텐츠 -->
+        <div class="left">
+            <h3>모양을 만들어 봐</h3>
+            <div class="button-container">
+                <!-- 10x10 배열 버튼 -->
+                <!-- 각 10번째 버튼 뒤에 <br/> 추가하여 10x10 그리드 형성 -->
+                <!-- 버튼 1~10 -->
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn1" value="ㅣ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn2" value="ㅈ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn3" value="ㅜ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn4" value="ㅇ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn5" value="ㄴ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn6" value="ㄷ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn7" value="ㅈ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn8" value="ㄴ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn9" value="ㄱ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn10" value="ㄷ">
+
+                <!-- 버튼 11~20 -->
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn11" value="ㅜ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn12" value="ㅗ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn13" value="ㄱ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn14" value="ㅓ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn15" value="ㅏ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn16" value="ㅗ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn17" value="ㅗ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn18" value="ㅈ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn19" value="ㅊ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn20" value="ㅍ">
+
+                <!-- 버튼 21~30 -->
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn21" value="ㄱ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn22" value="ㅇ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn23" value="ㅜ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn24" value="ㅇ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn25" value="ㅏ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn26" value="ㅣ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn27" value="ㄴ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn28" value="ㅎ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn29" value="ㅏ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn30" value="ㅌ">
+
+                <!-- 버튼 31~40 -->
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn31" value="ㅐ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn32" value="ㅏ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn33" value="ㅌ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn34" value="ㅣ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn35" value="ㅊ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn36" value="ㅅ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn37" value="ㅓ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn38" value="ㅜ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn39" value="ㅇ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn40" value="ㄴ">
+
+                <!-- 버튼 41~50 -->
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn41" value="ㄷ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn42" value="ㄴ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn43" value="ㅜ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn44" value="ㅇ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn45" value="ㄱ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn46" value="ㅇ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn47" value="ㅔ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn48" value="ㅈ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn49" value="ㅅ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn50" value="ㅁ">
+
+                <!-- 버튼 51~60 -->
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn51" value="ㅗ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn52" value="ㅈ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn53" value="ㄹ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn54" value="ㄱ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn55" value="ㅜ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn56" value="ㅍ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn57" value="ㅇ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn58" value="ㅅ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn59" value="ㄴ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn60" value="ㅜ">
+
+                <!-- 버튼 61~70 -->
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn61" value="ㄲ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn62" value="ㅊ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn63" value="ㅎ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn64" value="ㅎ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn65" value="ㄹ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn66" value="ㅇ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn67" value="ㅗ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn68" value="ㅐ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn69" value="ㄱ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn70" value="ㄴ">
+
+                <!-- 버튼 71~80 -->
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn71" value="ㅗ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn72" value="ㄹ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn73" value="ㅐ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn74" value="ㅣ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn75" value="ㅇ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn76" value="ㅣ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn77" value="ㅜ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn78" value="ㅎ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn79" value="ㅜ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn80" value="ㄴ">
+
+                <!-- 버튼 81~90 -->
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn81" value="ㄱ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn82" value="ㅏ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn83" value="ㅏ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn84" value="ㄱ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn85" value="ㅓ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn86" value="ㅍ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn87" value="ㅐ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn88" value="ㅇ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn89" value="ㄱ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn90" value="ㅇ">
+
+                <!-- 버튼 91~100 -->
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn91" value="ㅏ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn92" value="ㅂ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn93" value="ㅐ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn94" value="ㅓ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn95" value="ㅇ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn96" value="ㅑ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn97" value="ㅎ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn98" value="ㅇ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn99" value="ㅡ">
+                <input type="button" class="btn1" onclick="btnColor.call(this)" id="btn100" value="ㄹ">
+            </div><br/>
+            <input type="reset" class="btn2" value="초기화" onclick="btnClear()"><br/>
+        </div>
+
+        <!-- 오른쪽 콘텐츠 -->
+        <div class="right">
+            <h1>어떤 문장인가요?</h1>
+            <p>
+                <input type="text" name="result" style="width:200px; height:50px;" id="출력1" onkeyup="if(event.keyCode==13) checkval();" />
+                <input type="button" id="btn" class="btn-check" value="정답 확인하기" onclick="checkval()" /><br/>
+            </p>
+            <div id="error" style="display:none; color:red; text-align:center;">
+                <h1>"오답입니다."</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
